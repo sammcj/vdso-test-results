@@ -17,7 +17,7 @@ However vDSO was added to Xen quite a while ago, so getting some comparisons wil
 
 1. Install pre-reqs
 
-_Note: Assumes [kernel-ml](https://elrepo.org/tiki/kernel-ml) is installed from [elrepo](https://elrepo.org/tiki/tiki-index.php)_.
+_Note: Assumes [kernel-ml](https://elrepo.org/tiki/kernel-ml) is installed from [elrepo](https://elrepo.org/tiki/tiki-index.php)_ on CentOS 7.
 
 ```
 yum clean all
