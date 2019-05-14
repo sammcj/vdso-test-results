@@ -6,7 +6,7 @@ Results of running vDSO tests on various hosts
 
 Tests can be found [under the various CPU types in this repo](https://github.com/sammcj/vdso-test-results).
 
-## Why care about vDSO?
+## Why care about vDSO performance?
 
 If vDSO isn’t working as intended / effectively then fixing that could have HUGE performance gains on highly multithreaded applications.
 
