@@ -13,7 +13,7 @@ If vDSO isn’t working as intended / effectively then fixing that could have HU
 This started with me trying to get to the bottom of why Puppet Enterprise Master / Server runs so poorly on Xen VMs, Puppet thinks that vDSO isn’t being properly utilised.
 However vDSO was added to Xen quite a while ago, so getting some comparisons will prove useful.
 
-## Test Method
+## Install and Testing
 
 1. Install pre-reqs
 
