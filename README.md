@@ -6,6 +6,13 @@ Results of running vDSO tests on various hosts
 
 Tests can be found [under the various CPU types in this repo](https://github.com/sammcj/vdso-test-results).
 
+## Why care about vDSO?
+
+If vDSO isn’t working as intended / effectively then fixing that could have HUGE performance gains on highly multithreaded applications.
+
+This started with me trying to get to the bottom of why Puppet Enterprise Master / Server runs so poorly on Xen VMs, Puppet thinks that vDSO isn’t being properly utilised.
+However vDSO was added to Xen quite a while ago, so getting some comparisons will prove useful.
+
 ## Test Method
 
 1. Install pre-reqs
