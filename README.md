@@ -39,7 +39,7 @@ cd vdsotest
 3. Run all tests
 
 ```
-./vdsotest-all.sh
+./vdsotest-all
 ```
 
 4. Record CPU info
