@@ -53,6 +53,7 @@ cat /proc/cpuinfo
 - https://en.wikipedia.org/wiki/VDSO
 - https://lwn.net/Articles/615809/
 - http://man7.org/linux/man-pages/man7/vdso.7.html
+- https://www.linuxjournal.com/content/creating-vdso-colonels-other-chicken
 
 ### Xen Specific
 
