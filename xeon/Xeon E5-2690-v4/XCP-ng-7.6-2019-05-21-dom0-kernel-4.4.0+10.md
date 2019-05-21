@@ -12,11 +12,6 @@
 # vdsotest-all
 
 ```
-[root@localhost vdsotest]# vi vdsotest-all
-[root@localhost vdsotest]# ./vdsotest-all
-./vdsotest-all: line 13: vdsotest: command not found
-[root@localhost vdsotest]# vi vdsotest-all
-[root@localhost vdsotest]# ./vdsotest-all
 clock-gettime-monotonic: syscall: 1509 nsec/call
 clock-gettime-monotonic:    libc: 16 nsec/call
 clock-gettime-monotonic:    vdso: 22 nsec/call
