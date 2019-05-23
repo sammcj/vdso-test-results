@@ -13,7 +13,14 @@
 - vDSO and tsc clocksource enabled on host: `/opt/xensource/libexec/xen-cmdline --set-xen clocksource=tsc && /opt/xensource/libexec/xen-cmdline --set-xen tsc=stable:socket` (and reboot)
 - VM clocksource set to tsc: `echo tsc > /sys/devices/system/clocksource/clocksource0/current_clocksource`
 
-Note: The above two xen-cmdline set's the clocksource to tsc allowing for vDSO which is available as of Xen 4.8, XCP-ng 8.0 ships with 4.11 (7.6 shipped with 4.7).
+Note: The above two xen-cmdline set's the clocksource to tsc allowing for vDSO which is available as of Xen 4.8, XCP-ng 8.0 ships with 4.11 (7.6 shipped with 4.7),
+_however_ it does not appear the vDSO is working properly (yet):
+
+```
+[root@localhost ~]# xl dmesg|grep -i vdso
+[root@localhost ~]# xl dmesg|grep -i clock
+(XEN) [    0.000000] Command line: dom0_mem=8192M,max:8192M watchdog ucode=scan dom0_max_vcpus=1-16 crashkernel=256M,below=4G console=vga vga=mode-0x0311 clocksource=tsc tsc=stable:socket
+```
 
 # vdsotest-all
 
