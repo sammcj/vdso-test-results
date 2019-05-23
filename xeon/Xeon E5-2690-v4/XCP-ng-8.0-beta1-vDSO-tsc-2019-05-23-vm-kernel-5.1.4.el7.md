@@ -10,80 +10,83 @@
 - VM 8GB Memory provisioned, SWAP only VRAM (unused)
 - VM OS CentOS 7, All updates as of 23/05/2019
 - No VMs / other applications running (fresh install, CentOS updates installed, Kernel updated, rebooted)
+- vDSO and tsc clocksource enabled on host: `/opt/xensource/libexec/xen-cmdline --set-xen clocksource=tsc && /opt/xensource/libexec/xen-cmdline --set-xen tsc=stable:socket` (and reboot)
 - VM clocksource set to tsc: `echo tsc > /sys/devices/system/clocksource/clocksource0/current_clocksource`
+
+Note: The above two xen-cmdline set's the clocksource to tsc allowing for vDSO which is available as of Xen 4.8, XCP-ng 8.0 ships with 4.11 (7.6 shipped with 4.7).
 
 # vdsotest-all
 
 ```
-clock-gettime-monotonic: syscall: 490 nsec/call
-clock-gettime-monotonic:    libc: 18 nsec/call
-clock-gettime-monotonic:    vdso: 17 nsec/call
+clock-gettime-monotonic: syscall: 487 nsec/call
+clock-gettime-monotonic:    libc: 19 nsec/call
+clock-gettime-monotonic:    vdso: 18 nsec/call
 Note: vDSO version of clock_getres not found
-clock-getres-monotonic: syscall: 455 nsec/call
-clock-getres-monotonic:    libc: 622 nsec/call
+clock-getres-monotonic: syscall: 461 nsec/call
+clock-getres-monotonic:    libc: 624 nsec/call
 clock-getres-monotonic:    vdso: not tested
 Note: vDSO version of clock_getres not found
 Note: vDSO version of clock_getres not found
-clock-gettime-monotonic-coarse: syscall: 439 nsec/call
+clock-gettime-monotonic-coarse: syscall: 450 nsec/call
 clock-gettime-monotonic-coarse:    libc: 4 nsec/call
-clock-gettime-monotonic-coarse:    vdso: 3 nsec/call
+clock-gettime-monotonic-coarse:    vdso: 5 nsec/call
 Note: vDSO version of clock_getres not found
-clock-getres-monotonic-coarse: syscall: 439 nsec/call
-clock-getres-monotonic-coarse:    libc: 607 nsec/call
+clock-getres-monotonic-coarse: syscall: 450 nsec/call
+clock-getres-monotonic-coarse:    libc: 453 nsec/call
 clock-getres-monotonic-coarse:    vdso: not tested
 Note: vDSO version of clock_getres not found
 Note: vDSO version of clock_getres not found
-clock-gettime-monotonic-raw: syscall: 498 nsec/call
-clock-gettime-monotonic-raw:    libc: 495 nsec/call
-clock-gettime-monotonic-raw:    vdso: 661 nsec/call
+clock-gettime-monotonic-raw: syscall: 504 nsec/call
+clock-gettime-monotonic-raw:    libc: 507 nsec/call
+clock-gettime-monotonic-raw:    vdso: 649 nsec/call
 Note: vDSO version of clock_getres not found
-clock-getres-monotonic-raw: syscall: 434 nsec/call
-clock-getres-monotonic-raw:    libc: 582 nsec/call
+clock-getres-monotonic-raw: syscall: 441 nsec/call
+clock-getres-monotonic-raw:    libc: 571 nsec/call
 clock-getres-monotonic-raw:    vdso: not tested
 Note: vDSO version of clock_getres not found
 Note: vDSO version of clock_getres not found
-clock-gettime-tai: syscall: 480 nsec/call
+clock-gettime-tai: syscall: 485 nsec/call
 clock-gettime-tai:    libc: 18 nsec/call
-clock-gettime-tai:    vdso: 23 nsec/call
+clock-gettime-tai:    vdso: 18 nsec/call
 Note: vDSO version of clock_getres not found
-clock-getres-tai: syscall: 441 nsec/call
-clock-getres-tai:    libc: 560 nsec/call
+clock-getres-tai: syscall: 451 nsec/call
+clock-getres-tai:    libc: 667 nsec/call
 clock-getres-tai:    vdso: not tested
 Note: vDSO version of clock_getres not found
 Note: vDSO version of clock_getres not found
-clock-gettime-boottime: syscall: 491 nsec/call
-clock-gettime-boottime:    libc: 488 nsec/call
-clock-gettime-boottime:    vdso: 737 nsec/call
+clock-gettime-boottime: syscall: 489 nsec/call
+clock-gettime-boottime:    libc: 493 nsec/call
+clock-gettime-boottime:    vdso: 727 nsec/call
 Note: vDSO version of clock_getres not found
-clock-getres-boottime: syscall: 440 nsec/call
-clock-getres-boottime:    libc: 443 nsec/call
+clock-getres-boottime: syscall: 439 nsec/call
+clock-getres-boottime:    libc: 634 nsec/call
 clock-getres-boottime:    vdso: not tested
 Note: vDSO version of clock_getres not found
 Note: vDSO version of clock_getres not found
-clock-gettime-realtime: syscall: 486 nsec/call
+clock-gettime-realtime: syscall: 484 nsec/call
 clock-gettime-realtime:    libc: 19 nsec/call
-clock-gettime-realtime:    vdso: 26 nsec/call
+clock-gettime-realtime:    vdso: 17 nsec/call
 Note: vDSO version of clock_getres not found
-clock-getres-realtime: syscall: 437 nsec/call
-clock-getres-realtime:    libc: 623 nsec/call
+clock-getres-realtime: syscall: 443 nsec/call
+clock-getres-realtime:    libc: 618 nsec/call
 clock-getres-realtime:    vdso: not tested
 Note: vDSO version of clock_getres not found
 Note: vDSO version of clock_getres not found
-clock-gettime-realtime-coarse: syscall: 447 nsec/call
+clock-gettime-realtime-coarse: syscall: 444 nsec/call
 clock-gettime-realtime-coarse:    libc: 4 nsec/call
 clock-gettime-realtime-coarse:    vdso: 5 nsec/call
 Note: vDSO version of clock_getres not found
-clock-getres-realtime-coarse: syscall: 444 nsec/call
-clock-getres-realtime-coarse:    libc: 608 nsec/call
+clock-getres-realtime-coarse: syscall: 450 nsec/call
+clock-getres-realtime-coarse:    libc: 606 nsec/call
 clock-getres-realtime-coarse:    vdso: not tested
 Note: vDSO version of clock_getres not found
 Note: vDSO version of clock_getres not found
-getcpu: syscall: 423 nsec/call
+getcpu: syscall: 445 nsec/call
 getcpu:    libc: 11 nsec/call
-getcpu:    vdso: 14 nsec/call
-gettimeofday: syscall: 477 nsec/call
+getcpu:    vdso: 13 nsec/call
+gettimeofday: syscall: 471 nsec/call
 gettimeofday:    libc: 20 nsec/call
-gettimeofday:    vdso: 27 nsec/call
+gettimeofday:    vdso: 26 nsec/call
 ```
 
 # `/proc/cpuinfo`
