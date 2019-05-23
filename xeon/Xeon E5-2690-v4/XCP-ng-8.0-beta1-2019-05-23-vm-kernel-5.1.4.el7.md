@@ -13,9 +13,6 @@
 # vdsotest-all
 
 ```
-./vdsotest-all: line 13: /usr/bin/vdsotest: No such file or directory
-[root@pm-samm-dev-01 vdsotest]# vi vdsotest-all
-[root@pm-samm-dev-01 vdsotest]# ./vdsotest-all
 clock-gettime-monotonic: syscall: 511 nsec/call
 clock-gettime-monotonic:    libc: 499 nsec/call
 clock-gettime-monotonic:    vdso: 684 nsec/call
