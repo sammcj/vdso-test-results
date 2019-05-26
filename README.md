@@ -58,7 +58,7 @@ cat /proc/cpuinfo
 - http://man7.org/linux/man-pages/man7/vdso.7.html
 - https://www.linuxjournal.com/content/creating-vdso-colonels-other-chicken
 - https://github.com/torvalds/linux/blob/v4.19/Documentation/virtual/kvm/timekeeping.txt
-- http://oliveryang.net/2015/09/pitfalls-of-TSC-usage/
+- http://oliveryang.net/2015/09/pitfalls-of-TSC-usage/ (Note: Dated)
 
 ### Xen Specific
 
