@@ -51,14 +51,17 @@ cd vdsotest
 cat /proc/cpuinfo
 ```
 
-## vDSO Information and Links
+## vDSO and Timekeeping Information and Links
 
 - https://en.wikipedia.org/wiki/VDSO
 - https://lwn.net/Articles/615809/
 - http://man7.org/linux/man-pages/man7/vdso.7.html
 - https://www.linuxjournal.com/content/creating-vdso-colonels-other-chicken
+- https://github.com/torvalds/linux/blob/v4.19/Documentation/virtual/kvm/timekeeping.txt
 
 ### Xen Specific
 
 - https://xenproject.org/2016/12/07/whats-new-with-xen-project-hypervisor-4-8/ (See PVCLOCK_TSC_STABLE_BIT)
 - https://lkml.org/lkml/2017/11/8/627
+- https://blog.packagecloud.io/eng/2017/03/08/system-calls-are-much-slower-on-ec2/
+- http://xenbits.xen.org/docs/4.2-testing/misc/tscmode.txt

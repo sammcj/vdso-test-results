@@ -8,6 +8,7 @@
 - dom0 Kernel 4.4.0+10 (standard XCP-ng dom0)
 - dom0 4GB Memory (standard XCP-ng dom0)
 - No VMs / other domains running (fresh install, xcp-ng updates installed, rebooted)
+- /sys/devices/system/clocksource/clocksource0/current_clocksource = tsc
 
 # vdsotest-all
 

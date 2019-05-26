@@ -9,6 +9,7 @@
 - VM Kernel 5.1.1-1.el7
 - VM 8GB Memory provisioned, SWAP only VRAM (unused)
 - VM OS CentOS 7, All updates as of 14/05/2019
+- /sys/devices/system/clocksource/clocksource0/current_clocksource = tsc
 
 # vdsotest-all
 

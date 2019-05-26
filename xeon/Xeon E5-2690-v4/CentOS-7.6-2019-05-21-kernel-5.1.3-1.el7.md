@@ -7,6 +7,7 @@
 - CPU 14 cores + hyperthreading enabled
 - Kernel 5.1.3-1 (standard current stable el-repo kernel-ml)
 - No VMs / other applications running (fresh install, CentOS updates installed, Kernel updated, rebooted)
+- /sys/devices/system/clocksource/clocksource0/current_clocksource = tsc
 
 # vdsotest-all
 
